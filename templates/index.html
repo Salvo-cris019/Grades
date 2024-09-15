@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Calculator</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="prelim_grade">Preliminary Grade</label>
+                <input type="number" id="prelim_grade" name="prelim_grade" step="any" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn-primary" value="Calculate">
+            </div>
+        </form>
+        {% if result %}
+            <p class="result">{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
